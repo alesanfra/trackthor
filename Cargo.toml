@@ -9,5 +9,5 @@ name = "trackthor"
 crate-type = ["cdylib"]
 
 [dependencies.pyo3]
-version = "0.13.2"
+version = "*"
 features = ["extension-module", "abi3-py36"]

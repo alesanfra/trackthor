@@ -24,13 +24,17 @@ struct Box {
 impl Box {
     #[new]
     fn new(center: (i32, i32), height: i32, width: i32) -> Self {
-        Box { center, height, width }
+        Box {
+            center,
+            height,
+            width,
+        }
     }
 }
 
 /// A Python module implemented in Rust.
 #[pymodule]
-fn trackthor(py: Python, m: &PyModule) -> PyResult<()> {
+fn trackthor(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_class::<Box>()?;
 
